@@ -4,7 +4,8 @@
   "description": "JSON sorter written in NodeJS",
   "main": "Sorter.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tomisshit": "echo \"It's true $npm_config_test\""
   },
   "repository": {
     "type": "git",
