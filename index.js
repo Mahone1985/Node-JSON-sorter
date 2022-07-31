@@ -34,7 +34,7 @@ itemObj.item.sort((a, b) => {
     return 0;
 });
 
-fs.writeFile("C:\\temp\\sorted.txt", JSON.stringify(itemObj), err => {
+fs.writeFile(path.dirname(filePath)+"\\sorted.JSON", JSON.stringify(itemObj), err => {
     if (err) {
       console.error(err);
     }
