@@ -4,10 +4,6 @@
 const path = require('path');
 const filePath = "C:\\temp\\test.json";
 
-//console.log(path.dirname(filePath));
-//console.log(path.basename(filePath));
-//console.log(path.extname(filePath));
-
 // Load contents of the file
 // https://nodejs.dev/learn/reading-files-with-nodejs
 
@@ -18,21 +14,8 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     console.error(err);
     return;
   }
-  //console.log(data);
   sorter(data);
 });
-
-const content = "samuelljackson";
-
-fs.writeFile("C:\\temp\\sorted.txt", content, err => {
-  if (err) {
-    console.error(err);
-  }
-  // file written successfully
-  console.log("File Written successfully");
-});
-
-
 
 
 function sorter(fileContent) {
@@ -51,6 +34,12 @@ itemObj.item.sort((a, b) => {
     return 0;
 });
 
-//console.log(JSON.stringify(itemObj));
+fs.writeFile("C:\\temp\\sorted.txt", JSON.stringify(itemObj), err => {
+    if (err) {
+      console.error(err);
+    }
+    // file written successfully
+    console.log("File Written successfully");
+  });
 
 }
