@@ -1,21 +1,20 @@
 {
-  "name": "node-json-sorter",
-  "version": "1.0.0",
-  "description": "JSON sorter written in NodeJS",
-  "main": "Sorter.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "tomisshit": "echo \"It's true $npm_config_test\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mahone1985/Node-JSON-sorter.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Mahone1985/Node-JSON-sorter/issues"
-  },
-  "homepage": "https://github.com/Mahone1985/Node-JSON-sorter#readme"
+    "name": "node-json-sorter",
+    "version": "1.0.0",
+    "description": "JSON sorter written in NodeJS",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Mahone1985/Node-JSON-sorter.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Mahone1985/Node-JSON-sorter/issues"
+    },
+    "homepage": "https://github.com/Mahone1985/Node-JSON-sorter#readme"
 }

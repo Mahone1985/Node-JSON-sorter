@@ -1,0 +1,1903 @@
+{
+	"info": {
+		"_postman_id": "fe965baf-469d-4911-b74a-03e6ac646321",
+		"name": "z Example Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22617629"
+	},
+	"item": [
+		{
+			"name": "New Folder",
+			"item": [
+				{
+					"name": "Sub Folder",
+					"item": [
+						{
+							"name": "Sub sub folder",
+							"item": [
+								{
+									"name": "Greater than and less than Copy 2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const jsonData = pm.response.json();\r",
+													"\r",
+													"console.log(jsonData.results[0].dob.age);\r",
+													"\r",
+													"pm.test(\"Age is greater than 30\", function () {\r",
+													"    pm.expect(jsonData.results[0].dob.age).to.be.above(30);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age is less than 70\", function () {\r",
+													"    pm.expect(jsonData.results[0].dob.age).to.be.below(70);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "https://randomuser.me/api/",
+											"protocol": "https",
+											"host": [
+												"randomuser",
+												"me"
+											],
+											"path": [
+												"api",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Replace a character Copy 2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const jsonData = pm.response.json().info.version;\r",
+													"\r",
+													"let newVal = jsonData.replace('.', '');\r",
+													"\r",
+													"console.log(newVal);\r",
+													"console.log(newVal.length);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "https://randomuser.me/api/",
+											"protocol": "https",
+											"host": [
+												"randomuser",
+												"me"
+											],
+											"path": [
+												"api",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Math Round Copy 2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const jsonData = pm.response.json();\r",
+													"\r",
+													"console.log(jsonData.bpi.GBP.rate_float);\r",
+													"let numberToRound = jsonData.bpi.GBP.rate_float;\r",
+													"console.log(Math.floor(numberToRound));\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://api.coindesk.com/v1/bpi/currentprice.json",
+											"protocol": "https",
+											"host": [
+												"api",
+												"coindesk",
+												"com"
+											],
+											"path": [
+												"v1",
+												"bpi",
+												"currentprice.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Math Round Down with Floor Copy 2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const jsonData = pm.response.json();\r",
+													"\r",
+													"console.log(jsonData.bpi.GBP.rate_float);\r",
+													"let numberToRound = jsonData.bpi.GBP.rate_float;\r",
+													"console.log(Math.floor(numberToRound));\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://api.coindesk.com/v1/bpi/currentprice.json",
+											"protocol": "https",
+											"host": [
+												"api",
+												"coindesk",
+												"com"
+											],
+											"path": [
+												"v1",
+												"bpi",
+												"currentprice.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Math Round Up with Ceil Copy 2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const jsonData = pm.response.json();\r",
+													"\r",
+													"console.log(jsonData.bpi.GBP.rate_float);\r",
+													"let numberToRound = jsonData.bpi.GBP.rate_float;\r",
+													"console.log(Math.ceil(numberToRound));\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://api.coindesk.com/v1/bpi/currentprice.json",
+											"protocol": "https",
+											"host": [
+												"api",
+												"coindesk",
+												"com"
+											],
+											"path": [
+												"v1",
+												"bpi",
+												"currentprice.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Math Trunc Copy 2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const jsonData = pm.response.json();\r",
+													"\r",
+													"console.log(jsonData.bpi.GBP.rate_float);\r",
+													"let numberToRound = jsonData.bpi.GBP.rate_float;\r",
+													"console.log(Math.trunc(numberToRound));\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://api.coindesk.com/v1/bpi/currentprice.json",
+											"protocol": "https",
+											"host": [
+												"api",
+												"coindesk",
+												"com"
+											],
+											"path": [
+												"v1",
+												"bpi",
+												"currentprice.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Using Slice with a RegEx Copy 2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const response = pm.response.text();\r",
+													"let authCode = response.match(/authorizationCode = '(.*?)';/g);\r",
+													"//remove first and last characters with slice;\r",
+													"console.log(authCode[0].slice(21, -2));"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<!DOCTYPE html>\r\n<html>\r\n    <head>\r\n--------------------\r\n</head>\r\n    <body>\r\n        <script>\r\n        function onClickButton(word) {\r\n        if (word == 'yes'){\r\n          var authorizationCode = '360ad5ce-ecfe-4ad4-83d1-9254e89a3ccc';\r\n          var state = 'c8271b81-4229-6a1f-bf9c-758f11c1f5b1';\r\n        } else {\r\n          alert(word);\r\n        }\r\n      }\r\n    </script>\r\n        <div class=\"shb-psua-sign-app-sandbox-container\">\r\n    --------------------\r\n    </div>\r\n    </body>\r\n</html>",
+											"options": {
+												"raw": {
+													"language": "html"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://postman-echo.com/post",
+											"protocol": "https",
+											"host": [
+												"postman-echo",
+												"com"
+											],
+											"path": [
+												"post"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Strip out value using RegEx Copy 2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var body = responseBody;\r",
+													"if(body!=null && body.length>0){\r",
+													"    var array = new RegExp(\"secret\\=(.*?)\\\"\").exec(body);\r",
+													"    if(array!=null && array.length>0 && array[1]!=null){\r",
+													"        //pm.globals.set(\"secret\", \"\"+array[1]);\r",
+													"        console.log(array[1]);\r",
+													"    }\r",
+													"}"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"value\": \"otpauth://totp/BTTExchange:teste123@mailinator.com?algorithm=SHA1&digits=6&issuer=WITExchange&period=30&secret=44RN6GN38TDRXZ5HXDCDA7TTWCB3YWJG\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://postman-echo.com/post",
+											"protocol": "https",
+											"host": [
+												"postman-echo",
+												"com"
+											],
+											"path": [
+												"post"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Map vlaues in array Copy 2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const response = pm.response.json();\r",
+													"\r",
+													"const skuArray = response.data.map(data => data.sku);\r",
+													"\r",
+													"console.log(\"New array of sku numbers = \", skuArray);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"sku\": \"91357\",\r\n        \"name\": \"Schaukelset mit 5 Sitzen Orange\",\r\n        \"permalink\": \"https://shopnetic.de/spielzeuge-spiele/spielzeug-fuer-draussen/spieltuerme/schaukelset-mit-5-sitzen-orange/\",\r\n        \"regular_price\": \"235.03\",\r\n        \"stock_quantity\": 123,\r\n        \"categories\": [\r\n            {\r\n                \"id\": 22038,\r\n                \"name\": \"Spieltürme\",\r\n                \"slug\": \"spieltuerme\"\r\n            }\r\n        ],\r\n        \"attributes\": [\r\n            {\r\n                \"id\": 54,\r\n                \"name\": \"Farbe\",\r\n                \"position\": 1,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"Orange\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 55,\r\n                \"name\": \"Geschlecht\",\r\n                \"position\": 2,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"Kinder\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 58,\r\n                \"name\": \"Marke\",\r\n                \"position\": 5,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"vidaXL\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 59,\r\n                \"name\": \"Art der Pakete\",\r\n                \"position\": 6,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"parcel\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 60,\r\n                \"name\": \"Anzahl der Packstücke\",\r\n                \"position\": 7,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"1\"\r\n                ]\r\n            }\r\n        ],\r\n        \"meta_data\": [\r\n            {\r\n                \"id\": 69383907,\r\n                \"key\": \"_alg_wc_cog_profit\",\r\n                \"value\": \"197.504202\"\r\n            },\r\n            {\r\n                \"id\": 69383908,\r\n                \"key\": \"_alg_wc_cog_profit_percent\",\r\n                \"value\": \"0\"\r\n            },\r\n            {\r\n                \"id\": 69383909,\r\n                \"key\": \"_alg_wc_cog_profit_margin\",\r\n                \"value\": \"100\"\r\n            },\r\n            {\r\n                \"id\": 69383929,\r\n                \"key\": \"fifu_list_url\",\r\n                \"value\": \"https://vdxl.im/8718475571131_a_en_hd_1.jpg|https://vdxl.im/8718475571131_g_en_hd_1.jpg|https://vdxl.im/8718475571131_g_en_hd_2.jpg|https://vdxl.im/8718475571131_g_en_hd_3.jpg|https://vdxl.im/8718475571131_g_en_hd_4.jpg|https://vdxl.im/8718475571131_g_en_hd_5.jpg|https://vdxl.im/8718475571131_g_en_hd_6.jpg|https://vdxl.im/8718475571131_g_en_hd_7.jpg|https://vdxl.im/8718475571131_g_en_hd_8.jpg|https://vdxl.im/8718475571131_g_en_hd_9.jpg|https://vdxl.im/8718475571131_g_en_hd_10.jpg|https://vdxl.im/8718475571131_g_en_hd_11.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383930,\r\n                \"key\": \"fifu_list_alt\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383931,\r\n                \"key\": \"fifu_image_url\",\r\n                \"value\": \"https://vdxl.im/8718475571131_a_en_hd_1.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383932,\r\n                \"key\": \"fifu_image_alt\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383933,\r\n                \"key\": \"fifu_image_url_0\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_1.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383934,\r\n                \"key\": \"fifu_image_alt_0\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383935,\r\n                \"key\": \"fifu_image_url_1\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_2.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383936,\r\n                \"key\": \"fifu_image_alt_1\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383937,\r\n                \"key\": \"fifu_image_url_2\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_3.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383938,\r\n                \"key\": \"fifu_image_alt_2\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383939,\r\n                \"key\": \"fifu_image_url_3\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_4.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383940,\r\n                \"key\": \"fifu_image_alt_3\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383941,\r\n                \"key\": \"fifu_image_url_4\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_5.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383942,\r\n                \"key\": \"fifu_image_alt_4\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383943,\r\n                \"key\": \"fifu_image_url_5\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_6.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383944,\r\n                \"key\": \"fifu_image_alt_5\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383945,\r\n                \"key\": \"fifu_image_url_6\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_7.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383946,\r\n                \"key\": \"fifu_image_alt_6\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383947,\r\n                \"key\": \"fifu_image_url_7\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_8.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383948,\r\n                \"key\": \"fifu_image_alt_7\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383949,\r\n                \"key\": \"fifu_image_url_8\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_9.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383950,\r\n                \"key\": \"fifu_image_alt_8\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383951,\r\n                \"key\": \"fifu_image_url_9\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_10.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383952,\r\n                \"key\": \"fifu_image_alt_9\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383953,\r\n                \"key\": \"fifu_image_url_10\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_11.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383954,\r\n                \"key\": \"fifu_image_alt_10\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383955,\r\n                \"key\": \"_rank_math_gtin_code\",\r\n                \"value\": \"8718475571131\"\r\n            },\r\n            {\r\n                \"id\": 69383956,\r\n                \"key\": \"_alg_wc_cog_cost\",\r\n                \"value\": \"145.98\"\r\n            },\r\n            {\r\n                \"id\": 69383957,\r\n                \"key\": \"_wp_page_template\",\r\n                \"value\": \"default\"\r\n            },\r\n            {\r\n                \"id\": 69383958,\r\n                \"key\": \"rank_math_internal_links_processed\",\r\n                \"value\": \"1\"\r\n            },\r\n            {\r\n                \"id\": 69483263,\r\n                \"key\": \"fifu_tmp_product_image_gallery\",\r\n                \"value\": \"10633985,10633986,10633987,10633988,10633989,10633990,10633991,10633992,10633993,10633994,10633995\"\r\n            }\r\n        ],\r\n        \"delivery_time\": {\r\n            \"name\": \"3–6 Werktage\"\r\n        }\r\n    },\r\n    {\r\n        \"sku\": \"809515\",\r\n        \"name\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\",\r\n        \"permalink\": \"https://shopnetic.de/moebel/tische/nachttische/nachttische-2-stk-schwarz-45x34x44-cm-spanplatte/\",\r\n        \"regular_price\": \"63.98\",\r\n        \"stock_quantity\": 140,\r\n        \"categories\": [\r\n            {\r\n                \"id\": 21525,\r\n                \"name\": \"Nachttische\",\r\n                \"slug\": \"nachttische\"\r\n            }\r\n        ],\r\n        \"attributes\": [\r\n            {\r\n                \"id\": 54,\r\n                \"name\": \"Farbe\",\r\n                \"position\": 1,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"Schwarz\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 57,\r\n                \"name\": \"Größe\",\r\n                \"position\": 4,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"N/A\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 58,\r\n                \"name\": \"Marke\",\r\n                \"position\": 5,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"vidaXL\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 59,\r\n                \"name\": \"Art der Pakete\",\r\n                \"position\": 6,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"parcel\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 60,\r\n                \"name\": \"Anzahl der Packstücke\",\r\n                \"position\": 7,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"1\"\r\n                ]\r\n            }\r\n        ],\r\n        \"meta_data\": [\r\n            {\r\n                \"id\": 69278794,\r\n                \"key\": \"_alg_wc_cog_profit\",\r\n                \"value\": \"53.764706\"\r\n            },\r\n            {\r\n                \"id\": 69278795,\r\n                \"key\": \"_alg_wc_cog_profit_percent\",\r\n                \"value\": \"0\"\r\n            },\r\n            {\r\n                \"id\": 69278796,\r\n                \"key\": \"_alg_wc_cog_profit_margin\",\r\n                \"value\": \"100\"\r\n            },\r\n            {\r\n                \"id\": 69278816,\r\n                \"key\": \"fifu_list_url\",\r\n                \"value\": \"https://vdxl.im/8720286834527_m_en_hd_1.jpg|https://vdxl.im/8720286834527_a_en_hd_1.jpg|https://vdxl.im/8720286834527_g_en_hd_1.jpg|https://vdxl.im/8720286834527_g_en_hd_2.jpg|https://vdxl.im/8720286834527_g_en_hd_3.jpg|https://vdxl.im/8720286834527_g_en_hd_4.jpg|https://vdxl.im/8720286834527_g_en_hd_5.jpg|https://vdxl.im/8720286834527_g_en_hd_6.jpg|https://vdxl.im/8720286834527_g_en_hd_7.jpg|||\"\r\n            },\r\n            {\r\n                \"id\": 69278817,\r\n                \"key\": \"fifu_list_alt\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278818,\r\n                \"key\": \"fifu_image_url\",\r\n                \"value\": \"https://vdxl.im/8720286834527_m_en_hd_1.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69278819,\r\n                \"key\": \"fifu_image_alt\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278820,\r\n                \"key\": \"fifu_image_url_0\",\r\n                \"value\": \"https://vdxl.im/8720286834527_a_en_hd_1.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69278821,\r\n                \"key\": \"fifu_image_alt_0\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278822,\r\n                \"key\": \"fifu_image_url_1\",\r\n                \"value\": \"https://vdxl.im/8720286834527_g_en_hd_1.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69278823,\r\n                \"key\": \"fifu_image_alt_1\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278824,\r\n                \"key\": \"fifu_image_url_2\",\r\n                \"value\": \"https://vdxl.im/8720286834527_g_en_hd_2.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69278825,\r\n                \"key\": \"fifu_image_alt_2\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278826,\r\n                \"key\": \"fifu_image_url_3\",\r\n                \"value\": \"https://vdxl.im/8720286834527_g_en_hd_3.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69278827,\r\n                \"key\": \"fifu_image_alt_3\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278828,\r\n                \"key\": \"fifu_image_url_4\",\r\n                \"value\": \"https://vdxl.im/8720286834527_g_en_hd_4.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69278829,\r\n                \"key\": \"fifu_image_alt_4\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278830,\r\n                \"key\": \"fifu_image_url_5\",\r\n                \"value\": \"https://vdxl.im/8720286834527_g_en_hd_5.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69278831,\r\n                \"key\": \"fifu_image_alt_5\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278832,\r\n                \"key\": \"fifu_image_url_6\",\r\n                \"value\": \"https://vdxl.im/8720286834527_g_en_hd_6.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69278833,\r\n                \"key\": \"fifu_image_alt_6\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278834,\r\n                \"key\": \"fifu_image_url_7\",\r\n                \"value\": \"https://vdxl.im/8720286834527_g_en_hd_7.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69278835,\r\n                \"key\": \"fifu_image_alt_7\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278836,\r\n                \"key\": \"_rank_math_gtin_code\",\r\n                \"value\": \"8720286834527\"\r\n            },\r\n            {\r\n                \"id\": 69278837,\r\n                \"key\": \"_alg_wc_cog_cost\",\r\n                \"value\": \"39.74\"\r\n            },\r\n            {\r\n                \"id\": 69278838,\r\n                \"key\": \"_wp_page_template\",\r\n                \"value\": \"default\"\r\n            },\r\n            {\r\n                \"id\": 69278839,\r\n                \"key\": \"rank_math_internal_links_processed\",\r\n                \"value\": \"1\"\r\n            }\r\n        ],\r\n        \"delivery_time\": {\r\n            \"name\": \"3–6 Werktage\"\r\n        }\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://postman-echo.com/post",
+											"protocol": "https",
+											"host": [
+												"postman-echo",
+												"com"
+											],
+											"path": [
+												"post"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Try and catch example Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const x = Math.random(); \r",
+											"//console.log('x=' + x);\r",
+											"try{\r",
+											"    pm.expect(x).to.be.below(0.5,\"was not below 0.5\");\r",
+											"    pm.test(\"Pass - it was less than 0.5\", () => true); // this will only execute if no exception raised\r",
+											"}catch(e){\r",
+											"    pm.test(\"FAIL - it was more than 0.5\", () => {throw new Error(e.message)}); \r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://virtserver.swaggerhub.com/w4dd325/test/1.0.0/pet/0",
+									"protocol": "https",
+									"host": [
+										"virtserver",
+										"swaggerhub",
+										"com"
+									],
+									"path": [
+										"w4dd325",
+										"test",
+										"1.0.0",
+										"pet",
+										"0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Check field value in response Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"API response contains the expected fields\", () => {\r",
+											"  const response = pm.response.json();\r",
+											"\r",
+											"  pm.expect(response).to.have.property(\"id\", 0);\r",
+											"  pm.expect(response).to.have.property(\"name\", \"doggie\");\r",
+											"  pm.expect(response).to.have.property(\"status\", \"available\");\r",
+											"\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://virtserver.swaggerhub.com/w4dd325/test/1.0.0/pet/0",
+									"protocol": "https",
+									"host": [
+										"virtserver",
+										"swaggerhub",
+										"com"
+									],
+									"path": [
+										"w4dd325",
+										"test",
+										"1.0.0",
+										"pet",
+										"0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Check nested field value in response Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"API response contains the expected fields\", () => {\r",
+											"  const response = pm.response.json();\r",
+											"  pm.expect(response).to.have.nested.property(\"category.name\", \"astring\");  \r",
+											"  pm.expect(response).to.have.nested.property(\"category.id\", 0);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://virtserver.swaggerhub.com/w4dd325/test/1.0.0/pet/0",
+									"protocol": "https",
+									"host": [
+										"virtserver",
+										"swaggerhub",
+										"com"
+									],
+									"path": [
+										"w4dd325",
+										"test",
+										"1.0.0",
+										"pet",
+										"0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Try and catch to allow continue on test fail Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"API response contains all of the expected fields\", () => {\r",
+											"\r",
+											"//Parse response and save as variable\r",
+											"const response = pm.response.json(); \r",
+											"let count = 0;\r",
+											"\r",
+											"    //Tests to PASS\r",
+											"    try{pm.expect(response).to.have.property(\"status\", \"available\");\r",
+											"    }catch(e){pm.test(\"Check status value\", () => {throw new Error(e.message)}), count++;}\r",
+											"\r",
+											"    try{pm.expect(response).to.have.nested.property(\"category.id\", 0);\r",
+											"    }catch(e){pm.test(\"Check category.id value\", () => {throw new Error(e.message)}), count++;}\r",
+											"\r",
+											"    try{pm.expect(response).to.have.property(\"id\", 0);\r",
+											"    }catch(e){pm.test(\"Check id value\", () => {throw new Error(e.message)}), count++;}\r",
+											"\r",
+											"    //Tests to FAIL with WRONG DATA\r",
+											"    try{pm.expect(response).to.have.property(\"name\", \"WRONG DATA\");\r",
+											"    }catch(e){pm.test(\"Check name value\", () => {throw new Error(e.message)}), count++;}\r",
+											"        \r",
+											"    try{pm.expect(response).to.have.nested.property(\"category.name\", \"WRONG DATA\");  \r",
+											"    }catch(e){pm.test(\"Check category.name value\", () => {throw new Error(e.message)}), count++;}\r",
+											"\r",
+											"    //Count how many tests above fail, and fail the test case using pm.expect.fail if there is 1 or more failures\r",
+											"    if(count > 0) {\r",
+											"        pm.expect.fail(\"There are \" + count + \" failures within the above checks, please check...\")\r",
+											"    } \r",
+											"\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://virtserver.swaggerhub.com/w4dd325/test/1.0.0/pet/0",
+									"protocol": "https",
+									"host": [
+										"virtserver",
+										"swaggerhub",
+										"com"
+									],
+									"path": [
+										"w4dd325",
+										"test",
+										"1.0.0",
+										"pet",
+										"0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Schema validation Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const schema = {\r",
+											"    \"type\": \"object\",\r",
+											"    \"properties\": {\r",
+											"        \"id\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    },\r",
+											"    \"category\": {\r",
+											"      \"type\": \"object\",\r",
+											"      \"properties\": {\r",
+											"        \"id\": {\r",
+											"          \"type\": \"integer\"\r",
+											"        },\r",
+											"        \"name\": {\r",
+											"          \"type\": \"string\"\r",
+											"        }\r",
+											"      },\r",
+											"      \"required\": [\r",
+											"        \"id\",\r",
+											"        \"name\"\r",
+											"      ]\r",
+											"    },\r",
+											"    \"name\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"photoUrls\": {\r",
+											"      \"type\": \"array\",\r",
+											"      \"items\": [\r",
+											"        {\r",
+											"          \"type\": \"string\"\r",
+											"        }\r",
+											"      ]\r",
+											"    },\r",
+											"    \"tags\": {\r",
+											"      \"type\": \"array\",\r",
+											"      \"items\": [\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"id\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"id\",\r",
+											"            \"name\"\r",
+											"          ]\r",
+											"        }\r",
+											"      ]\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"id\",\r",
+											"    \"category\",\r",
+											"    \"name\",\r",
+											"    \"photoUrls\",\r",
+											"    \"tags\",\r",
+											"    \"status\"\r",
+											"  ]\r",
+											"};\r",
+											"\r",
+											"pm.test(\"Validating the API schema\", () => {\r",
+											"    pm.response.to.have.jsonSchema(schema);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://virtserver.swaggerhub.com/w4dd325/test/1.0.0/pet/0",
+									"protocol": "https",
+									"host": [
+										"virtserver",
+										"swaggerhub",
+										"com"
+									],
+									"path": [
+										"w4dd325",
+										"test",
+										"1.0.0",
+										"pet",
+										"0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Count items in array Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"pm.test(\"Number of items in tags array = \" + jsonData.tags.length);\r",
+											"//Or output to console...\r",
+											"console.log(\"Number of items in tags array = \" + jsonData.tags.length);\r",
+											"\r",
+											"//--------------------------------------------------------------------------\r",
+											"\r",
+											"//Or count and check against expected number like so;\r",
+											"pm.test(\"Is array \" + jsonData.tags.length + \" item(s) long?\", function () {\r",
+											"    pm.expect(jsonData.tags.length).to.equal(1);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://virtserver.swaggerhub.com/w4dd325/test/1.0.0/pet/0",
+									"protocol": "https",
+									"host": [
+										"virtserver",
+										"swaggerhub",
+										"com"
+									],
+									"path": [
+										"w4dd325",
+										"test",
+										"1.0.0",
+										"pet",
+										"0"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Status code check Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://virtserver.swaggerhub.com/w4dd325/test/1.0.0/pet/0",
+							"protocol": "https",
+							"host": [
+								"virtserver",
+								"swaggerhub",
+								"com"
+							],
+							"path": [
+								"w4dd325",
+								"test",
+								"1.0.0",
+								"pet",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Response time check Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://virtserver.swaggerhub.com/w4dd325/test/1.0.0/pet/0",
+							"protocol": "https",
+							"host": [
+								"virtserver",
+								"swaggerhub",
+								"com"
+							],
+							"path": [
+								"w4dd325",
+								"test",
+								"1.0.0",
+								"pet",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check data type of a response value Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.test(\"Test data type of the response\", () => {\r",
+									"    pm.expect(jsonData.category.name).to.be.a(\"string\");\r",
+									"    //other options to use;\r",
+									"    //pm.expect(jsonData).to.be.an(\"object\");\r",
+									"    //pm.expect(jsonData.name).to.be.a(\"string\");\r",
+									"    //pm.expect(jsonData.age).to.be.a(\"number\");\r",
+									"    //pm.expect(jsonData.hobbies).to.be.an(\"array\");\r",
+									"    //pm.expect(jsonData.website).to.be.undefined;\r",
+									"    //pm.expect(jsonData.email).to.be.null;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://virtserver.swaggerhub.com/w4dd325/test/1.0.0/pet/0",
+							"protocol": "https",
+							"host": [
+								"virtserver",
+								"swaggerhub",
+								"com"
+							],
+							"path": [
+								"w4dd325",
+								"test",
+								"1.0.0",
+								"pet",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check value against list Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Value is in valid list\", () => {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.category.name).to.be.oneOf([\"string\", \"test\", \"exmple\"]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://virtserver.swaggerhub.com/w4dd325/test/1.0.0/pet/0",
+							"protocol": "https",
+							"host": [
+								"virtserver",
+								"swaggerhub",
+								"com"
+							],
+							"path": [
+								"w4dd325",
+								"test",
+								"1.0.0",
+								"pet",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check JSON values in response Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check JSON values\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    //Example of top level\r",
+									"    pm.expect(jsonData.id).to.eql(0);\r",
+									"    //Example of first indent level\r",
+									"    pm.expect(jsonData.category.name).to.eql(\"string\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://virtserver.swaggerhub.com/w4dd325/test/1.0.0/pet/0",
+							"protocol": "https",
+							"host": [
+								"virtserver",
+								"swaggerhub",
+								"com"
+							],
+							"path": [
+								"w4dd325",
+								"test",
+								"1.0.0",
+								"pet",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Body response includes a value check Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body response includes the string, doggie\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"doggie\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://virtserver.swaggerhub.com/w4dd325/test/1.0.0/pet/0",
+							"protocol": "https",
+							"host": [
+								"virtserver",
+								"swaggerhub",
+								"com"
+							],
+							"path": [
+								"w4dd325",
+								"test",
+								"1.0.0",
+								"pet",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Headers exists check Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Following headers are all present\", function () {\r",
+									"    pm.response.to.have.header(\"Date\");\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"    pm.response.to.have.header(\"Content-Length\");\r",
+									"    pm.response.to.have.header(\"Connection\");\r",
+									"    pm.response.to.have.header(\"Access-Control-Allow-Headers\");\r",
+									"    pm.response.to.have.header(\"Access-Control-Allow-Origin\");\r",
+									"    pm.response.to.have.header(\"Access-Control-Allow-Methods\");\r",
+									"    pm.response.to.have.header(\"Access-Control-Allow-Credentials\");\r",
+									"    pm.response.to.have.header(\"Content-Encoding\");\r",
+									"    pm.response.to.have.header(\"Server\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://virtserver.swaggerhub.com/w4dd325/test/1.0.0/pet/0",
+							"protocol": "https",
+							"host": [
+								"virtserver",
+								"swaggerhub",
+								"com"
+							],
+							"path": [
+								"w4dd325",
+								"test",
+								"1.0.0",
+								"pet",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Headers to have value check Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const moment = require('moment');\r",
+									"let now = (moment().format(\"ddd, DD MMM YYYY HH:mm:ss \")+\"GMT\")\r",
+									"\r",
+									"pm.test(\"Check all headers return with correct values\", () => {\r",
+									"    pm.expect(pm.response.headers.get('Date')).to.eql(now);\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');\r",
+									"    pm.expect(pm.response.headers.get('Content-Length')).to.eql('125');\r",
+									"    pm.expect(pm.response.headers.get('Connection')).to.eql('keep-alive');\r",
+									"    pm.expect(pm.response.headers.get('Access-Control-Allow-Headers')).to.eql('X-Requested-With,Content-Type,Accept,Origin');\r",
+									"    pm.expect(pm.response.headers.get('Access-Control-Allow-Origin')).to.eql('*');\r",
+									"    pm.expect(pm.response.headers.get('Access-Control-Allow-Methods')).to.eql('*');\r",
+									"    pm.expect(pm.response.headers.get('Access-Control-Allow-Credentials')).to.eql('true');\r",
+									"    pm.expect(pm.response.headers.get('Content-Encoding')).to.eql('gzip');\r",
+									"    pm.expect(pm.response.headers.get('Server')).to.eql('Jetty(9.4.29.v20200521)');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://virtserver.swaggerhub.com/w4dd325/test/1.0.0/pet/0",
+							"protocol": "https",
+							"host": [
+								"virtserver",
+								"swaggerhub",
+								"com"
+							],
+							"path": [
+								"w4dd325",
+								"test",
+								"1.0.0",
+								"pet",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "If statement example Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"if (jsonData.category.name) {\r",
+									"    console.log(\"name was found!\");\r",
+									"    // do something\r",
+									"} else {\r",
+									"    console.log(\"no name ...\");\r",
+									"    //do something else\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://virtserver.swaggerhub.com/w4dd325/test/1.0.0/pet/0",
+							"protocol": "https",
+							"host": [
+								"virtserver",
+								"swaggerhub",
+								"com"
+							],
+							"path": [
+								"w4dd325",
+								"test",
+								"1.0.0",
+								"pet",
+								"0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Folder",
+			"item": [
+				{
+					"name": "For each in array with if Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var response = pm.response.json();\r",
+									"\r",
+									"for (let i = 0; i < response.tags.length; i++) {\r",
+									"    console.log(\"value is \" + response.tags[i].name + \" and index is \" + i)\r",
+									"    if(response.tags[i].name === \"string\"){\r",
+									"        console.log(\"IF STRING = value is \" + response.tags[i].name + \" and index is \" + i)\r",
+									"    }\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://virtserver.swaggerhub.com/w4dd325/test/1.0.0/pet/0",
+							"protocol": "https",
+							"host": [
+								"virtserver",
+								"swaggerhub",
+								"com"
+							],
+							"path": [
+								"w4dd325",
+								"test",
+								"1.0.0",
+								"pet",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Base64 Encode and Decode Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json().category.name;\r",
+									"//Encode value\r",
+									"var encodedMessage = btoa(response);\r",
+									"console.log(encodedMessage);\r",
+									"//Decode value\r",
+									"var decodedMessage = atob(encodedMessage);\r",
+									"console.log(decodedMessage);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://virtserver.swaggerhub.com/w4dd325/test/1.0.0/pet/0",
+							"protocol": "https",
+							"host": [
+								"virtserver",
+								"swaggerhub",
+								"com"
+							],
+							"path": [
+								"w4dd325",
+								"test",
+								"1.0.0",
+								"pet",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find in response Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Find completes on the first occurance found.\r",
+									"const jsonData = pm.response.json();\r",
+									"pm.test(\"Result has Mr\", () => {\r",
+									"    let result = jsonData.results.find(a => a.name.title === \"Mr\")\r",
+									"    pm.expect(result.name.title).to.eql(\"Mr\")\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://randomuser.me/api/",
+							"protocol": "https",
+							"host": [
+								"randomuser",
+								"me"
+							],
+							"path": [
+								"api",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter in response Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Filter returns all occurances found.\r",
+									"const jsonData = pm.response.json();\r",
+									"pm.test(\"Use filter to count all US alpha_two_codes\", () => {\r",
+									"    let result = jsonData.filter(a => a.alpha_two_code === \"US\")\r",
+									"    console.log(result.length)\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://universities.hipolabs.com/search?country=Spain",
+							"protocol": "http",
+							"host": [
+								"universities",
+								"hipolabs",
+								"com"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "country",
+									"value": "Spain"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OR Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"console.log(jsonData.results[0].name.title);\r",
+									"\r",
+									"const hasItemDetails = (jsonData.results[0].name.title.includes('Mr') \r",
+									"    || jsonData.results[0].name.title.includes('Mrs'));\r",
+									"\r",
+									"pm.test(\"Is Mr OR Mrs\", function () {\r",
+									"    pm.expect(hasItemDetails).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://randomuser.me/api/",
+							"protocol": "https",
+							"host": [
+								"randomuser",
+								"me"
+							],
+							"path": [
+								"api",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AND Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"console.log(jsonData.results[0].name.title);\r",
+									"console.log(jsonData.results[0].gender);\r",
+									"\r",
+									"//Check the condition and save as Bool value\r",
+									"const hasItemDetails = (jsonData.results[0].name.title.includes('Miss') \r",
+									"    && jsonData.results[0].gender.includes(\"female\"));\r",
+									"\r",
+									"//Test if Bool is True or False\r",
+									"pm.test(\"Is Mr AND United Kingdom\", function () {\r",
+									"    pm.expect(hasItemDetails).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://randomuser.me/api/",
+							"protocol": "https",
+							"host": [
+								"randomuser",
+								"me"
+							],
+							"path": [
+								"api",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Greater than and less than Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"console.log(jsonData.results[0].dob.age);\r",
+									"\r",
+									"pm.test(\"Age is greater than 30\", function () {\r",
+									"    pm.expect(jsonData.results[0].dob.age).to.be.above(30);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Age is less than 70\", function () {\r",
+									"    pm.expect(jsonData.results[0].dob.age).to.be.below(70);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://randomuser.me/api/",
+							"protocol": "https",
+							"host": [
+								"randomuser",
+								"me"
+							],
+							"path": [
+								"api",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Replace a character Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json().info.version;\r",
+									"\r",
+									"let newVal = jsonData.replace('.', '');\r",
+									"\r",
+									"console.log(newVal);\r",
+									"console.log(newVal.length);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://randomuser.me/api/",
+							"protocol": "https",
+							"host": [
+								"randomuser",
+								"me"
+							],
+							"path": [
+								"api",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Math Round Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"console.log(jsonData.bpi.GBP.rate_float);\r",
+									"let numberToRound = jsonData.bpi.GBP.rate_float;\r",
+									"console.log(Math.floor(numberToRound));\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.coindesk.com/v1/bpi/currentprice.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"coindesk",
+								"com"
+							],
+							"path": [
+								"v1",
+								"bpi",
+								"currentprice.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Math Round Down with Floor Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"console.log(jsonData.bpi.GBP.rate_float);\r",
+									"let numberToRound = jsonData.bpi.GBP.rate_float;\r",
+									"console.log(Math.floor(numberToRound));\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.coindesk.com/v1/bpi/currentprice.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"coindesk",
+								"com"
+							],
+							"path": [
+								"v1",
+								"bpi",
+								"currentprice.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Math Round Up with Ceil Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"console.log(jsonData.bpi.GBP.rate_float);\r",
+									"let numberToRound = jsonData.bpi.GBP.rate_float;\r",
+									"console.log(Math.ceil(numberToRound));\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.coindesk.com/v1/bpi/currentprice.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"coindesk",
+								"com"
+							],
+							"path": [
+								"v1",
+								"bpi",
+								"currentprice.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Math Trunc Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"console.log(jsonData.bpi.GBP.rate_float);\r",
+									"let numberToRound = jsonData.bpi.GBP.rate_float;\r",
+									"console.log(Math.trunc(numberToRound));\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.coindesk.com/v1/bpi/currentprice.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"coindesk",
+								"com"
+							],
+							"path": [
+								"v1",
+								"bpi",
+								"currentprice.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Using Slice with a RegEx Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.text();\r",
+									"let authCode = response.match(/authorizationCode = '(.*?)';/g);\r",
+									"//remove first and last characters with slice;\r",
+									"console.log(authCode[0].slice(21, -2));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<!DOCTYPE html>\r\n<html>\r\n    <head>\r\n--------------------\r\n</head>\r\n    <body>\r\n        <script>\r\n        function onClickButton(word) {\r\n        if (word == 'yes'){\r\n          var authorizationCode = '360ad5ce-ecfe-4ad4-83d1-9254e89a3ccc';\r\n          var state = 'c8271b81-4229-6a1f-bf9c-758f11c1f5b1';\r\n        } else {\r\n          alert(word);\r\n        }\r\n      }\r\n    </script>\r\n        <div class=\"shb-psua-sign-app-sandbox-container\">\r\n    --------------------\r\n    </div>\r\n    </body>\r\n</html>",
+							"options": {
+								"raw": {
+									"language": "html"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://postman-echo.com/post",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Strip out value using RegEx Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var body = responseBody;\r",
+									"if(body!=null && body.length>0){\r",
+									"    var array = new RegExp(\"secret\\=(.*?)\\\"\").exec(body);\r",
+									"    if(array!=null && array.length>0 && array[1]!=null){\r",
+									"        //pm.globals.set(\"secret\", \"\"+array[1]);\r",
+									"        console.log(array[1]);\r",
+									"    }\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"value\": \"otpauth://totp/BTTExchange:teste123@mailinator.com?algorithm=SHA1&digits=6&issuer=WITExchange&period=30&secret=44RN6GN38TDRXZ5HXDCDA7TTWCB3YWJG\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://postman-echo.com/post",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Map vlaues in array Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"\r",
+									"const skuArray = response.data.map(data => data.sku);\r",
+									"\r",
+									"console.log(\"New array of sku numbers = \", skuArray);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"sku\": \"91357\",\r\n        \"name\": \"Schaukelset mit 5 Sitzen Orange\",\r\n        \"permalink\": \"https://shopnetic.de/spielzeuge-spiele/spielzeug-fuer-draussen/spieltuerme/schaukelset-mit-5-sitzen-orange/\",\r\n        \"regular_price\": \"235.03\",\r\n        \"stock_quantity\": 123,\r\n        \"categories\": [\r\n            {\r\n                \"id\": 22038,\r\n                \"name\": \"Spieltürme\",\r\n                \"slug\": \"spieltuerme\"\r\n            }\r\n        ],\r\n        \"attributes\": [\r\n            {\r\n                \"id\": 54,\r\n                \"name\": \"Farbe\",\r\n                \"position\": 1,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"Orange\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 55,\r\n                \"name\": \"Geschlecht\",\r\n                \"position\": 2,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"Kinder\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 58,\r\n                \"name\": \"Marke\",\r\n                \"position\": 5,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"vidaXL\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 59,\r\n                \"name\": \"Art der Pakete\",\r\n                \"position\": 6,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"parcel\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 60,\r\n                \"name\": \"Anzahl der Packstücke\",\r\n                \"position\": 7,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"1\"\r\n                ]\r\n            }\r\n        ],\r\n        \"meta_data\": [\r\n            {\r\n                \"id\": 69383907,\r\n                \"key\": \"_alg_wc_cog_profit\",\r\n                \"value\": \"197.504202\"\r\n            },\r\n            {\r\n                \"id\": 69383908,\r\n                \"key\": \"_alg_wc_cog_profit_percent\",\r\n                \"value\": \"0\"\r\n            },\r\n            {\r\n                \"id\": 69383909,\r\n                \"key\": \"_alg_wc_cog_profit_margin\",\r\n                \"value\": \"100\"\r\n            },\r\n            {\r\n                \"id\": 69383929,\r\n                \"key\": \"fifu_list_url\",\r\n                \"value\": \"https://vdxl.im/8718475571131_a_en_hd_1.jpg|https://vdxl.im/8718475571131_g_en_hd_1.jpg|https://vdxl.im/8718475571131_g_en_hd_2.jpg|https://vdxl.im/8718475571131_g_en_hd_3.jpg|https://vdxl.im/8718475571131_g_en_hd_4.jpg|https://vdxl.im/8718475571131_g_en_hd_5.jpg|https://vdxl.im/8718475571131_g_en_hd_6.jpg|https://vdxl.im/8718475571131_g_en_hd_7.jpg|https://vdxl.im/8718475571131_g_en_hd_8.jpg|https://vdxl.im/8718475571131_g_en_hd_9.jpg|https://vdxl.im/8718475571131_g_en_hd_10.jpg|https://vdxl.im/8718475571131_g_en_hd_11.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383930,\r\n                \"key\": \"fifu_list_alt\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange|Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383931,\r\n                \"key\": \"fifu_image_url\",\r\n                \"value\": \"https://vdxl.im/8718475571131_a_en_hd_1.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383932,\r\n                \"key\": \"fifu_image_alt\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383933,\r\n                \"key\": \"fifu_image_url_0\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_1.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383934,\r\n                \"key\": \"fifu_image_alt_0\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383935,\r\n                \"key\": \"fifu_image_url_1\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_2.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383936,\r\n                \"key\": \"fifu_image_alt_1\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383937,\r\n                \"key\": \"fifu_image_url_2\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_3.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383938,\r\n                \"key\": \"fifu_image_alt_2\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383939,\r\n                \"key\": \"fifu_image_url_3\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_4.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383940,\r\n                \"key\": \"fifu_image_alt_3\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383941,\r\n                \"key\": \"fifu_image_url_4\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_5.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383942,\r\n                \"key\": \"fifu_image_alt_4\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383943,\r\n                \"key\": \"fifu_image_url_5\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_6.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383944,\r\n                \"key\": \"fifu_image_alt_5\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383945,\r\n                \"key\": \"fifu_image_url_6\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_7.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383946,\r\n                \"key\": \"fifu_image_alt_6\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383947,\r\n                \"key\": \"fifu_image_url_7\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_8.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383948,\r\n                \"key\": \"fifu_image_alt_7\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383949,\r\n                \"key\": \"fifu_image_url_8\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_9.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383950,\r\n                \"key\": \"fifu_image_alt_8\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383951,\r\n                \"key\": \"fifu_image_url_9\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_10.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383952,\r\n                \"key\": \"fifu_image_alt_9\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383953,\r\n                \"key\": \"fifu_image_url_10\",\r\n                \"value\": \"https://vdxl.im/8718475571131_g_en_hd_11.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69383954,\r\n                \"key\": \"fifu_image_alt_10\",\r\n                \"value\": \"Schaukelset mit 5 Sitzen Orange\"\r\n            },\r\n            {\r\n                \"id\": 69383955,\r\n                \"key\": \"_rank_math_gtin_code\",\r\n                \"value\": \"8718475571131\"\r\n            },\r\n            {\r\n                \"id\": 69383956,\r\n                \"key\": \"_alg_wc_cog_cost\",\r\n                \"value\": \"145.98\"\r\n            },\r\n            {\r\n                \"id\": 69383957,\r\n                \"key\": \"_wp_page_template\",\r\n                \"value\": \"default\"\r\n            },\r\n            {\r\n                \"id\": 69383958,\r\n                \"key\": \"rank_math_internal_links_processed\",\r\n                \"value\": \"1\"\r\n            },\r\n            {\r\n                \"id\": 69483263,\r\n                \"key\": \"fifu_tmp_product_image_gallery\",\r\n                \"value\": \"10633985,10633986,10633987,10633988,10633989,10633990,10633991,10633992,10633993,10633994,10633995\"\r\n            }\r\n        ],\r\n        \"delivery_time\": {\r\n            \"name\": \"3–6 Werktage\"\r\n        }\r\n    },\r\n    {\r\n        \"sku\": \"809515\",\r\n        \"name\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\",\r\n        \"permalink\": \"https://shopnetic.de/moebel/tische/nachttische/nachttische-2-stk-schwarz-45x34x44-cm-spanplatte/\",\r\n        \"regular_price\": \"63.98\",\r\n        \"stock_quantity\": 140,\r\n        \"categories\": [\r\n            {\r\n                \"id\": 21525,\r\n                \"name\": \"Nachttische\",\r\n                \"slug\": \"nachttische\"\r\n            }\r\n        ],\r\n        \"attributes\": [\r\n            {\r\n                \"id\": 54,\r\n                \"name\": \"Farbe\",\r\n                \"position\": 1,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"Schwarz\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 57,\r\n                \"name\": \"Größe\",\r\n                \"position\": 4,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"N/A\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 58,\r\n                \"name\": \"Marke\",\r\n                \"position\": 5,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"vidaXL\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 59,\r\n                \"name\": \"Art der Pakete\",\r\n                \"position\": 6,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"parcel\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 60,\r\n                \"name\": \"Anzahl der Packstücke\",\r\n                \"position\": 7,\r\n                \"visible\": true,\r\n                \"variation\": false,\r\n                \"options\": [\r\n                    \"1\"\r\n                ]\r\n            }\r\n        ],\r\n        \"meta_data\": [\r\n            {\r\n                \"id\": 69278794,\r\n                \"key\": \"_alg_wc_cog_profit\",\r\n                \"value\": \"53.764706\"\r\n            },\r\n            {\r\n                \"id\": 69278795,\r\n                \"key\": \"_alg_wc_cog_profit_percent\",\r\n                \"value\": \"0\"\r\n            },\r\n            {\r\n                \"id\": 69278796,\r\n                \"key\": \"_alg_wc_cog_profit_margin\",\r\n                \"value\": \"100\"\r\n            },\r\n            {\r\n                \"id\": 69278816,\r\n                \"key\": \"fifu_list_url\",\r\n                \"value\": \"https://vdxl.im/8720286834527_m_en_hd_1.jpg|https://vdxl.im/8720286834527_a_en_hd_1.jpg|https://vdxl.im/8720286834527_g_en_hd_1.jpg|https://vdxl.im/8720286834527_g_en_hd_2.jpg|https://vdxl.im/8720286834527_g_en_hd_3.jpg|https://vdxl.im/8720286834527_g_en_hd_4.jpg|https://vdxl.im/8720286834527_g_en_hd_5.jpg|https://vdxl.im/8720286834527_g_en_hd_6.jpg|https://vdxl.im/8720286834527_g_en_hd_7.jpg|||\"\r\n            },\r\n            {\r\n                \"id\": 69278817,\r\n                \"key\": \"fifu_list_alt\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte|Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278818,\r\n                \"key\": \"fifu_image_url\",\r\n                \"value\": \"https://vdxl.im/8720286834527_m_en_hd_1.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69278819,\r\n                \"key\": \"fifu_image_alt\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278820,\r\n                \"key\": \"fifu_image_url_0\",\r\n                \"value\": \"https://vdxl.im/8720286834527_a_en_hd_1.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69278821,\r\n                \"key\": \"fifu_image_alt_0\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278822,\r\n                \"key\": \"fifu_image_url_1\",\r\n                \"value\": \"https://vdxl.im/8720286834527_g_en_hd_1.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69278823,\r\n                \"key\": \"fifu_image_alt_1\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278824,\r\n                \"key\": \"fifu_image_url_2\",\r\n                \"value\": \"https://vdxl.im/8720286834527_g_en_hd_2.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69278825,\r\n                \"key\": \"fifu_image_alt_2\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278826,\r\n                \"key\": \"fifu_image_url_3\",\r\n                \"value\": \"https://vdxl.im/8720286834527_g_en_hd_3.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69278827,\r\n                \"key\": \"fifu_image_alt_3\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278828,\r\n                \"key\": \"fifu_image_url_4\",\r\n                \"value\": \"https://vdxl.im/8720286834527_g_en_hd_4.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69278829,\r\n                \"key\": \"fifu_image_alt_4\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278830,\r\n                \"key\": \"fifu_image_url_5\",\r\n                \"value\": \"https://vdxl.im/8720286834527_g_en_hd_5.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69278831,\r\n                \"key\": \"fifu_image_alt_5\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278832,\r\n                \"key\": \"fifu_image_url_6\",\r\n                \"value\": \"https://vdxl.im/8720286834527_g_en_hd_6.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69278833,\r\n                \"key\": \"fifu_image_alt_6\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278834,\r\n                \"key\": \"fifu_image_url_7\",\r\n                \"value\": \"https://vdxl.im/8720286834527_g_en_hd_7.jpg\"\r\n            },\r\n            {\r\n                \"id\": 69278835,\r\n                \"key\": \"fifu_image_alt_7\",\r\n                \"value\": \"Nachttische 2 Stk. Schwarz 45x34x44 cm Spanplatte\"\r\n            },\r\n            {\r\n                \"id\": 69278836,\r\n                \"key\": \"_rank_math_gtin_code\",\r\n                \"value\": \"8720286834527\"\r\n            },\r\n            {\r\n                \"id\": 69278837,\r\n                \"key\": \"_alg_wc_cog_cost\",\r\n                \"value\": \"39.74\"\r\n            },\r\n            {\r\n                \"id\": 69278838,\r\n                \"key\": \"_wp_page_template\",\r\n                \"value\": \"default\"\r\n            },\r\n            {\r\n                \"id\": 69278839,\r\n                \"key\": \"rank_math_internal_links_processed\",\r\n                \"value\": \"1\"\r\n            }\r\n        ],\r\n        \"delivery_time\": {\r\n            \"name\": \"3–6 Werktage\"\r\n        }\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://postman-echo.com/post",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check DOB Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Get todays date\r",
+									"const moment= require('moment');\r",
+									"currentDate = moment();\r",
+									"//Console log the year\r",
+									"console.log(currentDate.format(\"YYYY\"));\r",
+									"\r",
+									"//Grab the DOB from the HTTP response (will need extra code here to grab JSON value)\r",
+									"let DOB = \"25/05/1999\";\r",
+									"\r",
+									"//Remove first 6 characters to leave just the date\r",
+									"DOB = DOB.substring(6);\r",
+									"console.log(DOB);\r",
+									"\r",
+									"//Age = date minus DOB\r",
+									"let age = currentDate.format(\"YYYY\") - DOB;\r",
+									"console.log(age);\r",
+									"\r",
+									"if (age <= 20)\r",
+									"{\r",
+									"    console.log(\"Under age\");\r",
+									"}\r",
+									"else if (age > 20 && age < 45)\r",
+									"{\r",
+									"    console.log(\"Correct age\");\r",
+									"}\r",
+									"else if (age >= 45)\r",
+									"{\r",
+									"    console.log(\"Over age\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://postman-echo.com/post",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
