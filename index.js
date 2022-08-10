@@ -24,6 +24,21 @@ fs.readFile(filePath, 'utf8', (err, data) => {
 function sorter(fileContent) {
     const itemObj = JSON.parse(fileContent);
 
+
+    //---------------------------------------------------------------------------
+    /*
+    let results = itemObj;
+
+    Object.keys(results).forEach((key) => {
+        if (!key.toLocaleLowerCase().includes("item")) {
+          delete results[key]
+        }
+    })
+    console.log(results);
+    */
+    //---------------------------------------------------------------------------
+
+
     console.log("---------------------------------------------------------------------------");
     console.log("Starting to sort...");
 
