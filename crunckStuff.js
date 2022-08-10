@@ -127,6 +127,11 @@ x = Object.keys(crunk2)
 console.log(x);
 y = x.length
 console.log(y);
+
+//for (i = 0; i < x.length; i++) {
+//    console.log(Object.keys(crunk2.item[0].item[0].item[i]));
+//}
+
 console.log("-----------------------------------------");
 //-------------------------------------------------------
 console.log("Level 2");
@@ -136,8 +141,11 @@ y = x.length
 console.log(y);
 x = Object.keys(crunk2.item[0])
 console.log(x);
-y = x.length
-console.log(y);
+
+for (i = 0; i < x.length; i++) {
+    console.log(Object.keys(crunk2.item[i]));
+}
+
 console.log("-----------------------------------------");
 //-------------------------------------------------------
 console.log("Level 3");
@@ -147,8 +155,11 @@ y = x.length
 console.log(y);
 x = Object.keys(crunk2.item[0].item[0])
 console.log(x);
-y = x.length
-console.log(y);
+
+for (i = 0; i < x.length; i++) {
+    console.log(Object.keys(crunk2.item[0].item[i]));
+}
+
 console.log("-----------------------------------------");
 //-------------------------------------------------------
 console.log("Level 4");
@@ -156,10 +167,11 @@ x = Object.keys(crunk2.item[0].item[0].item)
 console.log(x);
 y = x.length
 console.log(y);
-x = Object.keys(crunk2.item[0].item[0].item[0])
-console.log(x);
-y = x.length
-console.log(y);
+
+for (i = 0; i < x.length; i++) {
+    console.log(Object.keys(crunk2.item[0].item[0].item[i]));
+}
+
 console.log("-----------------------------------------");
 //-------------------------------------------------------
 console.log("Level 5");
@@ -169,7 +181,10 @@ y = x.length
 console.log(y);
 x = Object.keys(crunk2.item[0].item[0].item[0].item[0])
 console.log(x);
-y = x.length
-console.log(y);
+
+for (i = 0; i < x.length; i++) {
+    console.log(Object.keys(crunk2.item[0].item[0].item[0].item[i]));
+}
+
 console.log("-----------------------------------------");
 //-------------------------------------------------------
