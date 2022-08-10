@@ -44,11 +44,13 @@ let x, y;
 console.log("------------------------------------------------");
 
 for (i = 0; i < crunk2.item[0].item[0].item.length; i++) {
-    console.log(crunk2.item[0].item[0].item[i]);
+	if (!('item' in crunk2.item[0].item[0].item[i])) {
+        console.log(crunk2.item[0].item[0].item[i]);
+    }
 }
 
 for (i = 0; i < crunk2.item[0].item.length; i++) {
-    if (!('item' in crunk2.item[0].item)) {
+    if (!('item' in crunk2.item[0].item[i])) {
         console.log(crunk2.item[0].item[i]);
     }
 }
