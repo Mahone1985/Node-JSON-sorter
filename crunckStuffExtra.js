@@ -2,13 +2,13 @@ let crunk = `{
 	"info": {
 		"name": "z Example Collection 2"
 	},
-	"item": [
+	"array": [
 		{
 			"name": "New Folder",
-			"item": [
+			"array": [
 				{
 					"name": "Sub Folder",
-					"item": [
+					"array": [
 						{
 							"name": "Request example 1"
 						},
@@ -31,38 +31,21 @@ let crunk = `{
 let crunk2 = JSON.parse(crunk.replace(/(?:\t)/g, ""));
 
 let x, y;
-//-------------------------------------------------------
-
-//console.log(crunk2.item);
-//console.log("------------------------------------------------");
-//console.log(crunk2.item[0].item[0].item[0]);
-//console.log(crunk2.item[0].item[0].item[1]);
-//console.log(crunk2.item[0].item[1]);
-//console.log(crunk2.item[0].item[2]);
-
 
 console.log("------------------------------------------------");
 
-for (i = 0; i < crunk2.item[0].item[0].item.length; i++) {
-    console.log(crunk2.item[0].item[0].item[i]);
-}
-
-for (i = 0; i < crunk2.item[0].item.length; i++) {
-    if (!('item' in crunk2.item[0].item)) {
-        console.log(crunk2.item[0].item[i]);
+for (i = 0; i < crunk2.array[0].array[0].array.length; i++) {
+    if (!('array' in crunk2.array[0].array[0].array[i])) {
+        console.log(crunk2.array[0].array[0].array[i]);
+    } else {
+        console.log(crunk2.array[0].array[0].name);
     }
 }
 
-
-
-/*
-for (i = 0; i < Object.keys(crunk2).length; i++) {
-    console.log(Object.keys(crunk2.item[i]));
-    console.log("-----------------------------------------");
-
-    for (i = 0; i < Object.keys(crunk2).length; i++) {
-        console.log(Object.keys(crunk2.item[0].item[i]));
-        console.log("-----------------------------------------");
+for (i = 0; i < crunk2.array[0].array.length; i++) {
+    if (!('array' in crunk2.array[0].array[i])) {
+        console.log(crunk2.array[0].array[i]);
+    } else {
+        console.log(crunk2.array[0].name);
     }
 }
-*/
