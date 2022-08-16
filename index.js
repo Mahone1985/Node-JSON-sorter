@@ -4,7 +4,8 @@ displayTitle();
 // https://nodejs.dev/learn/nodejs-file-paths
 
 const path = require('path');
-const filePath = "C:\\temp\\test.json";
+//const filePath = "C:\\temp\\test.json";
+const filePath = "C:\\temp\\test-unsorted-nofolders.json";
 
 // Load contents of the file
 // https://nodejs.dev/learn/reading-files-with-nodejs
