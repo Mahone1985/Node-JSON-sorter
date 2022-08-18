@@ -54,7 +54,7 @@ function sorter(data) {
 		sortetObj = obj;
 	};
 
-	let results = getRequestsFromJson(data);
+	getRequestsFromJson(data);
 
 	fs.writeFile(
 		path.dirname(filePath) +
